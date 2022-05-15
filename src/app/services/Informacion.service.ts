@@ -10,7 +10,7 @@ export class InformacionService {
   url: string = 'http://localhost:8080/informacion';
   constructor(private http: HttpClient) {}
   getInformacion(): Observable<Informacion> {
-    return this.http.get<Informacion>(this.url);
+    return this.http.get<Informacion>(this.url + '/all');
   }
   postInformacion(informacion: Informacion): Observable<Informacion> {
     return this.http.post<Informacion>(this.url + '/add', informacion);
