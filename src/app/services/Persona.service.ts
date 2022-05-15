@@ -13,7 +13,7 @@ export class PersonaService {
   getMiperfil(): Observable<Persona> {
     return this.http.get<Persona>(this.url + '/miperfil');
   }
-  getPersona(): Observable<Persona> {
+  getPersonas(): Observable<Persona> {
     return this.http.get<Persona>(this.url + '/all');
   }
   postPersona(persona: Persona): Observable<Persona> {
