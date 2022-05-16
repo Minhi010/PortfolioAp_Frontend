@@ -18,6 +18,9 @@ import { ExplaboralComponent } from './components/explaboral/explaboral.componen
 import { HabilidadComponent } from './components/habilidad/habilidad.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { SkeletonModule } from 'primeng/skeleton';
+import { BodyComponent } from './components/body/body.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { SkeletonModule } from 'primeng/skeleton';
     ExplaboralComponent,
     HabilidadComponent,
     ProyectoComponent,
+    BodyComponent,
+    SidenavComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

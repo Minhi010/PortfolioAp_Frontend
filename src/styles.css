@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+}
+:root {
+  --color-oscuro: #524a4e;
+  --color-claro: #fdeff4;
+  --color-rosaC: #ffc0d3;
+  --color-rosa: #ff5c8d;
+}
