@@ -17,9 +17,20 @@ import { EduformalComponent } from './components/eduformal/eduformal.component';
 import { ExplaboralComponent } from './components/explaboral/explaboral.component';
 import { HabilidadComponent } from './components/habilidad/habilidad.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SidebarComponent, InformacionComponent, CursoComponent, EduformalComponent, ExplaboralComponent, HabilidadComponent, ProyectoComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    SidebarComponent,
+    InformacionComponent,
+    CursoComponent,
+    EduformalComponent,
+    ExplaboralComponent,
+    HabilidadComponent,
+    ProyectoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +40,7 @@ import { ProyectoComponent } from './components/proyecto/proyecto.component';
     ReactiveFormsModule,
     SliderModule,
     RadioButtonModule,
+    SkeletonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

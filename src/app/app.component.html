@@ -1,1 +1,10 @@
 <app-navbar></app-navbar> <app-sidebar></app-sidebar>
+
+<ng-container *ngIf="persona; else cargando">
+  <app-informacion
+    [atributoInformacion]="persona.informacion"
+  ></app-informacion>
+</ng-container>
+<ng-template #cargando>
+  <p-skeleton shape="rectangle"> </p-skeleton>
+</ng-template>
