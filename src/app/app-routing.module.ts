@@ -7,7 +7,6 @@ import { ExplaboralComponent } from './components/explaboral/explaboral.componen
 import { HabilidadComponent } from './components/habilidad/habilidad.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
-import { ExpLaboralService } from './services/ExpLaboral.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
