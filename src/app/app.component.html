@@ -8,4 +8,5 @@
 <ng-template #cargando>
   <p-skeleton shape="rectangle"> </p-skeleton>
 </ng-template> -->
-<app-sidenav></app-sidenav>
+<app-sidenav (onToggleSidenav)="onToggleSideNav($event)"></app-sidenav>
+<app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-body>

@@ -29,7 +29,7 @@
 .logo-text {
   margin-left: 1.5rem;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-rosaC);
 }
 .btn-close {
@@ -68,7 +68,8 @@
   height: 3rem;
   color: var(--color-claro);
   text-decoration: none;
-  transition: color 0.3s ease;
+  border-radius: 0.625rem;
+  transition: all 0.3s ease;
 }
 .sidenav-nav-link:hover {
   background-color: var(--color-claro);
@@ -83,4 +84,14 @@
 }
 .sidenav-link-text {
   margin-left: 1.5rem;
+}
+.active {
+  background-color: var(--color-rosaC);
+}
+.sidenav-link-icon:hover {
+  color: var(--color-oscuro);
+},
+.sidenav-link-text:hover {
+  color: var(--color-oscuro);
+  
 }
