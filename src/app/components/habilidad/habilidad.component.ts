@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Habilidad } from 'src/app/models/Habilidad';
+import { PersonaService } from 'src/app/services/Persona.service';
 
 @Component({
   selector: 'app-habilidad',
   templateUrl: './habilidad.component.html',
-  styleUrls: ['./habilidad.component.css']
+  styleUrls: ['./habilidad.component.css'],
 })
 export class HabilidadComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  habilidades: Habilidad[] = [];
+  constructor(private personaService: PersonaService) {
+    this.personaService.getMiPersona().subscribe((persona) => {
+      this.habilidades = persona.habilidad;
+    });
   }
 
+  ngOnInit(): void {}
 }

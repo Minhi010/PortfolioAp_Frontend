@@ -87,11 +87,12 @@
 }
 .active {
   background-color: var(--color-rosaC);
+  color: var(--color-oscuro);
 }
 .sidenav-link-icon:hover {
   color: var(--color-oscuro);
-},
+}
+
 .sidenav-link-text:hover {
   color: var(--color-oscuro);
-  
 }

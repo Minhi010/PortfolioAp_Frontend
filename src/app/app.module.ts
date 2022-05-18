@@ -9,8 +9,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { CursoComponent } from './components/curso/curso.component';
 import { EduformalComponent } from './components/eduformal/eduformal.component';
@@ -21,12 +19,12 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { BodyComponent } from './components/body/body.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { CursoItemComponent } from './components/curso/curso-item/curso-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    SidebarComponent,
     InformacionComponent,
     CursoComponent,
     EduformalComponent,
@@ -36,6 +34,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
+    CursoItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +46,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SliderModule,
     RadioButtonModule,
     SkeletonModule,
+    ProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

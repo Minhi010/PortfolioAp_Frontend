@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { Persona } from './models/Persona';
 import { PersonaService } from './services/Persona.service';
+import { SideNavToggle } from './components/sidenav/SideNavToggle.model';
 
-interface SideNavToggle {
-  screenWidth: number;
-  collapsed: boolean;
-}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,11 +13,7 @@ export class AppComponent {
 
   persona!: Persona;
 
-  constructor(private personaService: PersonaService) {
-    this.personaService.getMiperfil().subscribe((persona: Persona) => {
-      this.persona = persona;
-    });
-  }
+  constructor() {}
 
   isSideNavCollapsed = false;
   screenWidth = 0;

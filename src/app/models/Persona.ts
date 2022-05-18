@@ -7,7 +7,7 @@ import { Proyecto } from './Proyecto';
 
 export interface Persona {
   id: number;
-  curso: Curso[];
+  cursos: Curso[];
   eduFormal: Eduformal[];
   expLaboral: ExpLaboral[];
   habilidad: Habilidad[];

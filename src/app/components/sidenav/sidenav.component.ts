@@ -12,12 +12,11 @@ import {
   EventEmitter,
   HostListener,
 } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PersonaService } from 'src/app/services/Persona.service';
 import { navbarData } from './nav-data';
+import { SideNavToggle } from './SideNavToggle.model';
 
-interface SideNavToggle {
-  screenWidth: number;
-  collapsed: boolean;
-}
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -47,12 +46,15 @@ interface SideNavToggle {
   ],
 })
 export class SidenavComponent implements OnInit {
-  constructor() {}
+  constructor(private personaService: PersonaService) {}
   @Output() onToggleSidenav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
 
+  cargue(): boolean {
+    return this.personaService.termineCarga;
+  }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.screenWidth = window.innerWidth;
@@ -83,5 +85,11 @@ export class SidenavComponent implements OnInit {
       collapsed: this.collapsed,
       screenWidth: this.screenWidth,
     });
+  }
+  abrirLink(event: Event): void {
+    if (!this.cargue()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
   }
 }
