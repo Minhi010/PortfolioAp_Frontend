@@ -11,7 +11,7 @@ export class HabilidadComponent implements OnInit {
   habilidades: Habilidad[] = [];
   constructor(private personaService: PersonaService) {
     this.personaService.getMiPersona().subscribe((persona) => {
-      this.habilidades = persona.habilidad;
+      this.habilidades = persona.habilidades;
     });
   }
 

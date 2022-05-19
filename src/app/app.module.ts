@@ -21,6 +21,12 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CursoItemComponent } from './components/curso/curso-item/curso-item.component';
+import { NgxTypedJsModule } from 'ngx-typed-js';
+import { EduformalItemComponent } from './components/eduformal/eduformal-item/eduformal-item.component';
+import { ExplaboralItemComponent } from './components/explaboral/explaboral-item/explaboral-item.component';
+import { ButtonModule } from 'primeng/button';
+import { HabilidadesItemComponent } from './components/habilidad/habilidades-item/habilidades-item.component';
+import { ProyectosItemComponent } from './components/proyecto/proyectos-item/proyectos-item.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +41,10 @@ import { CursoItemComponent } from './components/curso/curso-item/curso-item.com
     SidenavComponent,
     DashboardComponent,
     CursoItemComponent,
+    EduformalItemComponent,
+    ExplaboralItemComponent,
+    HabilidadesItemComponent,
+    ProyectosItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +57,8 @@ import { CursoItemComponent } from './components/curso/curso-item/curso-item.com
     RadioButtonModule,
     SkeletonModule,
     ProgressSpinnerModule,
+    NgxTypedJsModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

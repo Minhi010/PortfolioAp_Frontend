@@ -3,12 +3,15 @@
 
 <h1>Mi Perfil</h1>
 <div class="card">
+  <div class="mb-3"><img [src]="informacion?.foto" /></div>
   <div class="card-head">
-    {{ informacion?.nombre }} {{ informacion?.apellido }}
-  </div>
-  <div class="card-body">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus quasi
-    minus autem veniam, magni rem soluta in, deleniti mollitia, itaque modi!
-    Quam voluptas fugiat illum assumenda architecto maxime sit harum.
+    <p>
+      Nombre y apellido: {{ informacion?.nombre }} {{ informacion?.apellido }}
+    </p>
+    <p>Fecha de nacimiento: {{ informacion?.fechaNacimiento }}</p>
+    <p>Nacionalidad: {{ informacion?.nacionalidad }}</p>
+    <p>Ocupación: {{ informacion?.ocupacion }}</p>
+    <p>Sobre mi: {{ informacion?.descripcion }}</p>
   </div>
 </div>
+<img />

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Eduformal } from 'src/app/models/EduFormal';
+import { EduFormal } from 'src/app/models/EduFormal';
 import { PersonaService } from 'src/app/services/Persona.service';
 
 @Component({
@@ -8,10 +8,10 @@ import { PersonaService } from 'src/app/services/Persona.service';
   styleUrls: ['./eduformal.component.css'],
 })
 export class EduformalComponent implements OnInit {
-  eduformal: Eduformal[] = [];
+  eduFormal: EduFormal[] = [];
   constructor(private personaService: PersonaService) {
     this.personaService.getMiPersona().subscribe((persona) => {
-      this.eduformal = persona.eduFormal;
+      this.eduFormal = persona.eduFormal;
     });
   }
 

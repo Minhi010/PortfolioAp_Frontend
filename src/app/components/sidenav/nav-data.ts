@@ -16,12 +16,12 @@ export const navbarData = [
   },
   {
     routeLink: 'cursos',
-    icon: 'pi pi-book',
+    icon: 'pi pi-list',
     label: 'Cursos',
   },
   {
     routeLink: 'experiencia',
-    icon: 'pi pi-wallet',
+    icon: 'pi pi-briefcase',
     label: 'Experiencia Laboral',
   },
   {

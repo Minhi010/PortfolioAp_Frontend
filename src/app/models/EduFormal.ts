@@ -1,4 +1,4 @@
-export interface Eduformal {
+export interface EduFormal {
   id?: number;
   titulo: string;
   institucion: string;

@@ -9,11 +9,11 @@ import { PersonaService } from 'src/app/services/Persona.service';
 })
 export class InformacionComponent implements OnInit {
   informacion?: Informacion;
-  constructor(private personaService: PersonaService) {
+  constructor(private personaService: PersonaService) {}
+
+  ngOnInit(): void {
     this.personaService.getMiPersona().subscribe((persona) => {
       this.informacion = persona.informacion;
     });
   }
-
-  ngOnInit(): void {}
 }

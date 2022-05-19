@@ -1,5 +1,5 @@
 import { Curso } from './Curso';
-import { Eduformal } from './EduFormal';
+import { EduFormal } from './EduFormal';
 import { ExpLaboral } from './ExpLaboral';
 import { Habilidad } from './Habilidad';
 import { Informacion } from './Informacion';
@@ -8,9 +8,9 @@ import { Proyecto } from './Proyecto';
 export interface Persona {
   id: number;
   cursos: Curso[];
-  eduFormal: Eduformal[];
+  eduFormal: EduFormal[];
   expLaboral: ExpLaboral[];
-  habilidad: Habilidad[];
+  habilidades: Habilidad[];
   informacion: Informacion;
-  proyecto: Proyecto[];
+  proyectos: Proyecto[];
 }

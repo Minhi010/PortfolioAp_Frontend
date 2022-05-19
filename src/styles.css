@@ -17,22 +17,44 @@ body {
   --color-rosaC: #ffc0d3;
   --color-rosa: #ff5c8d;
 }
-.card{
+.card {
   display: flex;
   flex-direction: column;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: #fff;
   margin: 1.25rem 0 1.25rem 0;
-  box-shadow: 0 .25rem .5rem #edf1f2;
-  }
-.card-head{
+  box-shadow: 0 0.25rem 0.5rem #edf1f2;
+}
+.card-head {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #edf1f2;
   font-size: 1rem;
-  font-weight: 600;  
+  font-weight: 600;
+  margin-left: 10px;
 }
-.card-body{
+.card-body {
   padding: 1rem 1.5rem;
-  
-
+}
+.button-personal {
+  color: #fdeff4;
+  background-color: #524a4e;
+  border: 1px solid #524a4e;
+}
+.link {
+  transform: translateX(-0.75em);
+  transition: transform 200ms;
+}
+.link::before {
+  content: "#";
+  display: inline-block;
+  width: 0.75em;
+  color: #524a4e;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+.link:hover {
+  transform: none;
+}
+.link:hover::before {
+  opacity: 1;
 }

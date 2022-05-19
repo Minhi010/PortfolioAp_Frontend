@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Eduformal } from '../models/EduFormal';
+import { EduFormal } from '../models/EduFormal';
 
 @Injectable({
   providedIn: 'root',
@@ -9,14 +9,14 @@ import { Eduformal } from '../models/EduFormal';
 export class EduFormalService {
   url: string = 'http://localhost:8080/eduformal';
   constructor(private http: HttpClient) {}
-  getEduformal(): Observable<Eduformal> {
-    return this.http.get<Eduformal>(this.url + '/all');
+  getEduformal(): Observable<EduFormal> {
+    return this.http.get<EduFormal>(this.url + '/all');
   }
-  postEduformal(eduformal: Eduformal): Observable<Eduformal> {
-    return this.http.post<Eduformal>(this.url + '/add', eduformal);
+  postEduformal(eduFormal: EduFormal): Observable<EduFormal> {
+    return this.http.post<EduFormal>(this.url + '/add', eduFormal);
   }
-  updateEduformal(eduformal: Eduformal): Observable<Eduformal> {
-    return this.http.put<Eduformal>(this.url + '/update', eduformal);
+  updateEduformal(eduFormal: EduFormal): Observable<EduFormal> {
+    return this.http.put<EduFormal>(this.url + '/update', eduFormal);
   }
   deleteEduformal(id: number): Observable<void> {
     return this.http.delete<void>(this.url + '/delete/' + id);
