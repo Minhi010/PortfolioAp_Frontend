@@ -10,12 +10,19 @@ body {
   position: relative;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
+  width: calc(100%-5rem);
+  height: 100%vh;
+  z-index: 0;
+  top: 0;
+  transition: all 0.5s ease;
+  background: var(--color-marronC);
 }
 :root {
   --color-oscuro: #524a4e;
   --color-claro: #fdeff4;
   --color-rosaC: #ffc0d3;
   --color-rosa: #ff5c8d;
+  --color-marronC: #e0d8b0;
 }
 .card {
   display: flex;
@@ -23,7 +30,7 @@ body {
   border-radius: 0.5rem;
   background-color: #fff;
   margin: 1.25rem 0 1.25rem 0;
-  box-shadow: 0 0.25rem 0.5rem #edf1f2;
+  box-shadow: 0 0.25rem 0.5rem #68615a;
 }
 .card-head {
   padding: 1rem 1.5rem;
