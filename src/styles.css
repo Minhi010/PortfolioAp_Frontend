@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Montserrat:wght@200;300;400;500;700&family=Source+Sans+Pro:wght@200;300;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,21 +8,21 @@
 }
 body {
   position: relative;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+
   width: calc(100%-5rem);
   height: 100%vh;
   z-index: 0;
   top: 0;
   transition: all 0.5s ease;
-  background: var(--color-marronC);
+  background: var(--color-fondo);
 }
 :root {
   --color-oscuro: #524a4e;
   --color-claro: #fdeff4;
   --color-rosaC: #ffc0d3;
   --color-rosa: #ff5c8d;
-  --color-marronC: #e0d8b0;
+  --color-fondo: #fddfdb;
 }
 .card {
   display: flex;
@@ -31,6 +31,7 @@ body {
   background-color: #fff;
   margin: 1.25rem 0 1.25rem 0;
   box-shadow: 0 0.25rem 0.5rem #68615a;
+  line-height: 2rem;
 }
 .card-head {
   padding: 1rem 1.5rem;
