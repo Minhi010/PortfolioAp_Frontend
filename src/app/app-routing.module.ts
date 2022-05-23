@@ -7,7 +7,7 @@ import { ExplaboralComponent } from './components/explaboral/explaboral.componen
 import { HabilidadComponent } from './components/habilidad/habilidad.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
-
+import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'experiencia', component: ExplaboralComponent },
   { path: 'habilidades', component: HabilidadComponent },
   { path: 'proyectos', component: ProyectoComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

@@ -35,7 +35,7 @@ export class InformacionFormComponent implements OnInit {
   ngOnInit(): void {}
   mostrarFormulario(informacion: Informacion) {
     this.mostrarForm = true;
-    console.log(informacion.fechaNacimiento);
+
     this.formulario.patchValue(informacion);
   }
   submitFormulario() {

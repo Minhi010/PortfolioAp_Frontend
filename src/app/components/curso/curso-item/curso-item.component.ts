@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Curso } from 'src/app/models/Curso';
 
 @Component({
@@ -8,8 +8,15 @@ import { Curso } from 'src/app/models/Curso';
 })
 export class CursoItemComponent implements OnInit {
   @Input() curso!: Curso;
-
+  @Output() editarCurso: EventEmitter<Curso> = new EventEmitter();
+  @Output() eliminarCursoEvent: EventEmitter<Curso> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
+  editarCursoForm() {
+    this.editarCurso.emit(this.curso);
+  }
+  eliminarCurso() {
+    this.eliminarCursoEvent.emit(this.curso);
+  }
 }

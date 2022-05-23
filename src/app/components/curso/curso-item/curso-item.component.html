@@ -10,20 +10,25 @@
   <h3>Duracion: {{ curso.duracion }}</h3>
   <p>Descripción: {{ curso.descripcion }}</p>
 </div>
-<!-- <span class="p-buttonset">
+<span class="p-buttonset">
   <button
+    (click)="editarCursoForm()"
     pButton
     pRipple
     type="button"
     icon="pi pi-pencil"
     class="p-button-rounded p-button-success"
-  ></button>
+  >
+    Editar
+  </button>
   <button
+    (click)="eliminarCurso()"
     pButton
     pRipple
     type="button"
     icon="pi pi-trash"
     class="button-personal p-button-rounded"
-  ></button>
-
-</span> -->
+  >
+    Borrar
+  </button>
+</span>

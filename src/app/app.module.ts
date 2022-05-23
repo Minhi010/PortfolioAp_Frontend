@@ -32,6 +32,8 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
+import { CursoFormComponent } from './components/curso/curso-form/curso-form.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { CalendarModule } from 'primeng/calendar';
     HabilidadesItemComponent,
     ProyectosItemComponent,
     InformacionFormComponent,
+    CursoFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
