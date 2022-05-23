@@ -5,5 +5,4 @@ export interface Curso {
   foto: string;
   duracion: string;
   descripcion: string;
-  enlace: string;
 }

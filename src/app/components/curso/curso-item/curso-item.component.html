@@ -1,9 +1,14 @@
-<div class="card-head">
-  <h2>Titulo: {{ curso.nombre }}</h2>
+<div class="card-body">
+  <div class="circular-reveal">
+    <div class="circular-reveal__content">
+      <img [src]="curso.foto" alt="" />
+    </div>
+  </div>
+
+  <h3>Titulo: {{ curso.nombre }}</h3>
   <h3>Institucion: {{ curso.institucion }}</h3>
   <h3>Duracion: {{ curso.duracion }}</h3>
   <p>Descripción: {{ curso.descripcion }}</p>
-  <p class="link">Enlace: {{ curso.enlace }}</p>
 </div>
 <!-- <span class="p-buttonset">
   <button

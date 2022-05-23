@@ -8,5 +8,4 @@ export interface Informacion {
   mail: string;
   descripcion: string;
   foto: string;
-  fondo: string;
 }

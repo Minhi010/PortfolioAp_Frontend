@@ -27,6 +27,11 @@ import { ExplaboralItemComponent } from './components/explaboral/explaboral-item
 import { ButtonModule } from 'primeng/button';
 import { HabilidadesItemComponent } from './components/habilidad/habilidades-item/habilidades-item.component';
 import { ProyectosItemComponent } from './components/proyecto/proyectos-item/proyectos-item.component';
+import { InformacionFormComponent } from './components/informacion/informacion-form/informacion-form.component';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -45,6 +50,7 @@ import { ProyectosItemComponent } from './components/proyecto/proyectos-item/pro
     ExplaboralItemComponent,
     HabilidadesItemComponent,
     ProyectosItemComponent,
+    InformacionFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +65,10 @@ import { ProyectosItemComponent } from './components/proyecto/proyectos-item/pro
     ProgressSpinnerModule,
     NgxTypedJsModule,
     ButtonModule,
+    DialogModule,
+    InputTextareaModule,
+    InputTextModule,
+    CalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,91 @@
+<p-dialog
+  [(visible)]="mostrarForm"
+  [style]="{ width: '50vw' }"
+  position="right"
+  [modal]="true"
+  [draggable]="false"
+>
+  <form [formGroup]="formulario" (ngSubmit)="submitFormulario()" class="form">
+    <div class="p-fluid grid">
+      <div class="field col-3 md:col-4">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="nombre"
+            pInputText
+            formControlName="nombre"
+            class="ng-dirty"
+          />
+          <label for="nombre">Nombre</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-6">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="apellido"
+            pInputText
+            formControlName="apellido"
+            class="ng-dirty"
+          />
+          <label for="apellido">Apellido</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <p-calendar
+            inputId="fechaNacimiento"
+            dateFormat="yy-mm-dd"
+            formControlName="fechaNacimiento"
+          ></p-calendar>
+          <label for="fechaNacimiento"></label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="nacionalidad"
+            pInputText
+            formControlName="nacionalidad"
+          />
+          <label for="nacionalidad">Nacionalidad</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="ocupacion"
+            pInputText
+            formControlName="ocupacion"
+          />
+          <label for="ocupacion">Ocupación</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <input type="mail" id="mail" pInputText formControlName="mail" />
+          <label for="mail">E-mail</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <textarea
+            inputId="descripcion"
+            rows="3"
+            style="resize: none"
+            cols="30"
+            pInputTextarea
+            formControlName="descripcion"
+          ></textarea>
+          <label for="descripcion">Descripcion</label>
+        </span>
+      </div>
+    </div>
+
+    <button type="submit">Guardar</button>
+  </form>
+
+  <ng-template pTemplate="footer"> </ng-template>
+</p-dialog>
