@@ -1,7 +1,21 @@
 <h1>Educación Formal</h1>
+<button
+  class="ov-btn-slide-right"
+  (click)="abrirModalHijo()"
+  icon="pi pi-external-link"
+  label="Show"
+>
+  Añadir
+</button>
 <div class="card">
   <app-eduformal-item
+    (editarEduFormal)="abrirModalHijoEditar($event)"
+    (eliminarEduFormal)="eliminarEduFormal($event)"
     [eduFormal]="i"
     *ngFor="let i of eduFormal"
   ></app-eduformal-item>
 </div>
+<app-eduformal-form
+  #eduFormalForm
+  (submitEduFormal)="submitEduFormal($event)"
+></app-eduformal-form>

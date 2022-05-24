@@ -34,6 +34,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { CursoFormComponent } from './components/curso/curso-form/curso-form.component';
 import { LoginComponent } from './components/login/login.component';
+import { EduformalFormComponent } from './components/eduformal/eduformal-form/eduformal-form.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { LoginComponent } from './components/login/login.component';
     InformacionFormComponent,
     CursoFormComponent,
     LoginComponent,
+    EduformalFormComponent,
   ],
   imports: [
     BrowserModule,

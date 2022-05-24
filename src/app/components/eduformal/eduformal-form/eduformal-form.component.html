@@ -1,0 +1,61 @@
+<p-dialog
+  [(visible)]="mostrarForm"
+  [style]="{ width: '50vw' }"
+  position="right"
+  [modal]="true"
+  [draggable]="false"
+>
+  <form [formGroup]="formulario" (ngSubmit)="submitFormEdu()" class="form">
+    <div class="p-fluid grid">
+      <div class="field col-3 md:col-4">
+        <span class="p-float-label">
+          <input type="text" id="titulo" pInputText formControlName="titulo" />
+          <label for="nombre">Titulo</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="institucion"
+            pInputText
+            formControlName="institucion"
+          />
+          <label for="institucion">Institucion</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <input type="text" id="foto" pInputText formControlName="foto" />
+          <label for="foto">Foto</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <input
+            type="text"
+            id="periodo"
+            pInputText
+            formControlName="periodo"
+          />
+          <label for="duracion">Periodo</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+          <textarea
+            inputId="descripcion"
+            rows="3"
+            style="resize: none"
+            cols="30"
+            pInputTextarea
+            formControlName="descripcion"
+          ></textarea>
+          <label for="descripcion">Descripcion</label>
+        </span>
+      </div>
+    </div>
+
+    <button type="submit">Guardar</button>
+  </form>
+</p-dialog>

@@ -4,3 +4,25 @@
   <p>Periodo: {{ eduFormal.periodo }}</p>
   <p>Descripcion: {{ eduFormal.descripcion }}</p>
 </div>
+<span class="p-buttonset">
+  <button
+    (click)="editarEdu()"
+    pButton
+    pRipple
+    type="button"
+    icon="pi pi-pencil"
+    class="p-button-rounded p-button-success"
+  >
+    Editar
+  </button>
+  <button
+    (click)="eliminarEdu()"
+    pButton
+    pRipple
+    type="button"
+    icon="pi pi-trash"
+    class="button-personal p-button-rounded"
+  >
+    Borrar
+  </button>
+</span>
