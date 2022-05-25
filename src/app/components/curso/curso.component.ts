@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { Curso } from 'src/app/models/Curso';
 import { CursoService } from 'src/app/services/Curso.service';
 import { PersonaService } from 'src/app/services/Persona.service';
@@ -14,7 +15,8 @@ export class CursoComponent implements OnInit {
   cursos: Curso[] = [];
   constructor(
     private personaService: PersonaService,
-    private cursoService: CursoService
+    private cursoService: CursoService,
+    private messageService: MessageService
   ) {
     this.personaService.getMiPersona().subscribe((persona) => {
       this.cursos = persona.cursos;
@@ -30,25 +32,67 @@ export class CursoComponent implements OnInit {
   }
   nuevoSubmit(curso: Curso) {
     if (curso.id) {
-      this.cursoService.updateCurso(curso).subscribe((curso) => {
-        this.cursos = this.cursos.map((cursoAux) => {
-          if (cursoAux.id == curso.id) {
-            return curso;
-          }
-          return cursoAux;
-        });
+      this.cursoService.updateCurso(curso).subscribe({
+        next: (curso) => {
+          this.cursos = this.cursos.map((cursoAux) => {
+            if (cursoAux.id == curso.id) {
+              return curso;
+            }
+            return cursoAux;
+          });
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Actualizacion exitosa',
+            detail: 'Su elemento ha sido actualizado exitosamente',
+          });
+        },
+        error: (error) => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Ha ocurrido un error',
+            detail: 'Su elemento no ha sido actualizado',
+          });
+        },
       });
     } else {
-      this.cursoService.postCurso(curso).subscribe((curso) => {
-        this.cursos.push(curso);
+      this.cursoService.postCurso(curso).subscribe({
+        next: (curso) => {
+          this.cursos.push(curso);
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Creación exitosa',
+            detail: 'Su elemento ha sido creado exitosamente',
+          });
+        },
+        error: (error) => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Ha ocurrido un error',
+            detail: 'Su elemento no ha sido creado',
+          });
+        },
       });
     }
   }
   eliminarCursoLista(curso: Curso) {
-    this.cursoService.deleteCurso(curso.id!).subscribe(() => {
-      this.cursos = this.cursos.filter((cursoAux) => {
-        return cursoAux.id != curso.id;
-      });
+    this.cursoService.deleteCurso(curso.id!).subscribe({
+      next: () => {
+        this.cursos = this.cursos.filter((cursoAux) => {
+          return cursoAux.id != curso.id;
+        });
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Eliminación exitosa',
+          detail: 'Su elemento ha sido eliminado exitosamente',
+        });
+      },
+      error: (error) => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Ha ocurrido un error',
+          detail: 'Su elemento no ha sido eliminado',
+        });
+      },
     });
   }
 }

@@ -38,6 +38,8 @@ import { EduformalFormComponent } from './components/eduformal/eduformal-form/ed
 import { ExplaboralFormComponent } from './components/explaboral/explaboral-form/explaboral-form.component';
 import { HabilidadFormComponent } from './components/habilidad/habilidad-form/habilidad-form.component';
 import { ProyectoFormComponent } from './components/proyecto/proyecto-form/proyecto-form.component';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -81,8 +83,9 @@ import { ProyectoFormComponent } from './components/proyecto/proyecto-form/proye
     InputTextareaModule,
     InputTextModule,
     CalendarModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

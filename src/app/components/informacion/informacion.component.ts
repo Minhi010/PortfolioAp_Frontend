@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { Informacion } from 'src/app/models/Informacion';
 import { InformacionService } from 'src/app/services/Informacion.service';
 import { PersonaService } from 'src/app/services/Persona.service';
@@ -25,7 +26,8 @@ export class InformacionComponent implements OnInit {
 
   constructor(
     private personaService: PersonaService,
-    private informacionService: InformacionService
+    private informacionService: InformacionService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -37,12 +39,22 @@ export class InformacionComponent implements OnInit {
     this.informacionForm.mostrarFormulario(this.informacion);
   }
   editInfo(informacion: Informacion) {
-    console.log(informacion);
-    this.informacionService
-      .updateInformacion(informacion)
-      .subscribe((newInformacion) => {
+    this.informacionService.updateInformacion(informacion).subscribe({
+      next: (newInformacion) => {
         this.informacion = newInformacion;
-        /*toast de confirmacion o de error dependiendo de newinformacion*/
-      });
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Actualizacion exitosa',
+          detail: 'Su elemento ha sido actualizado exitosamente',
+        });
+      },
+      error: (error) => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Ha ocurrido un error',
+          detail: 'Su elemento no ha sido actualizado',
+        });
+      },
+    });
   }
 }
