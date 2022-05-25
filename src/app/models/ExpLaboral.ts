@@ -1,5 +1,5 @@
 export interface ExpLaboral {
-  id?: number;
+  id: number;
   trabajo: string;
   periodo: string;
   descripcion: string;

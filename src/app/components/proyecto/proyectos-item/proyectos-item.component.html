@@ -4,3 +4,25 @@
   <p>Fecha: {{ proyecto.fecha }}</p>
   <a href="{{ proyecto.enlace }}" class="link">Enlace a proyecto.</a>
 </div>
+<span class="p-buttonset">
+  <button
+    (click)="editarProyectoForm()"
+    pButton
+    pRipple
+    type="button"
+    icon="pi pi-pencil"
+    class="p-button-rounded p-button-success"
+  >
+    Editar
+  </button>
+  <button
+    (click)="eliminarProyectoForm()"
+    pButton
+    pRipple
+    type="button"
+    icon="pi pi-trash"
+    class="button-personal p-button-rounded"
+  >
+    Borrar
+  </button>
+</span>

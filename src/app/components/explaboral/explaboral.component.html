@@ -1,7 +1,21 @@
 <h1>Experiencia Laboral</h1>
+<button
+  class="ov-btn-slide-right"
+  (click)="abrirModalHijo()"
+  icon="pi pi-external-link"
+  label="Show"
+>
+  Añadir
+</button>
 <div class="card">
   <app-explaboral-item
+    (editarExplaboral)="abrirModalHijoEditar($event)"
+    (eliminarExplaboral)="eliminarExpLaboral($event)"
     [explaboral]="i"
     *ngFor="let i of explaboral"
   ></app-explaboral-item>
 </div>
+<app-explaboral-form
+  #explaboralForm
+  (submitExpLab)="submitExpLab($event)"
+></app-explaboral-form>

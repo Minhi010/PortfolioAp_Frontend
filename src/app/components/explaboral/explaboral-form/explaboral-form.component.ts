@@ -1,20 +1,20 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EduFormal } from 'src/app/models/EduFormal';
+import { ExpLaboral } from 'src/app/models/ExpLaboral';
 
 @Component({
-  selector: 'app-eduformal-form',
-  templateUrl: './eduformal-form.component.html',
-  styleUrls: ['./eduformal-form.component.css'],
+  selector: 'app-explaboral-form',
+  templateUrl: './explaboral-form.component.html',
+  styleUrls: ['./explaboral-form.component.css'],
 })
-export class EduformalFormComponent implements OnInit {
+export class ExplaboralFormComponent implements OnInit {
+  @Output() submitExpLab: EventEmitter<ExpLaboral> = new EventEmitter();
   formulario: FormGroup;
   mostrarForm: boolean = false;
-  @Output() submitEduFormal: EventEmitter<EduFormal> = new EventEmitter();
   constructor(private formBuilder: FormBuilder) {
     this.formulario = this.formBuilder.group({
       id: [0],
-      titulo: [
+      trabajo: [
         '',
         [
           Validators.required,
@@ -22,15 +22,6 @@ export class EduformalFormComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      institucion: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(50),
-        ],
-      ],
-      foto: ['', [Validators.required]],
       periodo: [
         '',
         [
@@ -52,19 +43,19 @@ export class EduformalFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  mostrarFormEdu() {
-    this.mostrarForm = true;
+  mostrarFormExp() {
     this.formulario.reset();
+    this.mostrarForm = true;
   }
-  setFormEdu(eduformal: EduFormal) {
-    this.mostrarFormEdu();
-    this.formulario.patchValue(eduformal);
+  setFormExp(explaboral: ExpLaboral) {
+    this.mostrarFormExp();
+    this.formulario.patchValue(explaboral);
   }
-  submitFormEdu() {
+  submitFormExp() {
     if (this.formulario.valid) {
-      this.submitEduFormal.emit(this.formulario.value);
-      this.formulario.reset();
+      this.submitExpLab.emit(this.formulario.value);
       this.mostrarForm = false;
+      this.formulario.reset();
     } else {
       this.formulario.markAllAsTouched();
     }

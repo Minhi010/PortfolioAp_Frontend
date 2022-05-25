@@ -1,20 +1,20 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EduFormal } from 'src/app/models/EduFormal';
+import { Habilidad } from 'src/app/models/Habilidad';
 
 @Component({
-  selector: 'app-eduformal-form',
-  templateUrl: './eduformal-form.component.html',
-  styleUrls: ['./eduformal-form.component.css'],
+  selector: 'app-habilidad-form',
+  templateUrl: './habilidad-form.component.html',
+  styleUrls: ['./habilidad-form.component.css'],
 })
-export class EduformalFormComponent implements OnInit {
+export class HabilidadFormComponent implements OnInit {
   formulario: FormGroup;
-  mostrarForm: boolean = false;
-  @Output() submitEduFormal: EventEmitter<EduFormal> = new EventEmitter();
+  @Output() submitFormHabilidad: EventEmitter<Habilidad> = new EventEmitter();
+  mostrarFormulario: boolean = false;
   constructor(private formBuilder: FormBuilder) {
     this.formulario = this.formBuilder.group({
       id: [0],
-      titulo: [
+      tecnologia: [
         '',
         [
           Validators.required,
@@ -22,16 +22,7 @@ export class EduformalFormComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      institucion: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(50),
-        ],
-      ],
-      foto: ['', [Validators.required]],
-      periodo: [
+      nivel: [
         '',
         [
           Validators.required,
@@ -51,20 +42,19 @@ export class EduformalFormComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  mostrarFormEdu() {
-    this.mostrarForm = true;
+  abrirFormulario() {
     this.formulario.reset();
+    this.mostrarFormulario = true;
   }
-  setFormEdu(eduformal: EduFormal) {
-    this.mostrarFormEdu();
-    this.formulario.patchValue(eduformal);
+  setHabilidadForm(habilidad: Habilidad) {
+    this.abrirFormulario();
+    console.log(habilidad);
+    this.formulario.patchValue(habilidad);
   }
-  submitFormEdu() {
+  submitHabilidad() {
     if (this.formulario.valid) {
-      this.submitEduFormal.emit(this.formulario.value);
-      this.formulario.reset();
-      this.mostrarForm = false;
+      this.submitFormHabilidad.emit(this.formulario.value);
+      this.mostrarFormulario = false;
     } else {
       this.formulario.markAllAsTouched();
     }

@@ -1,7 +1,21 @@
 <h1>Proyectos</h1>
+<button
+  class="ov-btn-slide-right"
+  (click)="abrirModalHijo()"
+  icon="pi pi-external-link"
+  label="Show"
+>
+  Añadir
+</button>
 <div class="card">
   <app-proyectos-item
+    (editarProyecto)="abrirModalHijoEditar($event)"
+    (eliminarProyecto)="eliminarProyecto($event)"
     [proyecto]="i"
     *ngFor="let i of proyectos"
   ></app-proyectos-item>
 </div>
+<app-proyecto-form
+  #proyectoForm
+  (submitProyecto)="nuevoSubmit($event)"
+></app-proyecto-form>

@@ -1,7 +1,21 @@
 <h1>Habilidades</h1>
+<button
+  class="ov-btn-slide-right"
+  (click)="abrirModalHijo()"
+  icon="pi pi-external-link"
+  label="Show"
+>
+  Añadir
+</button>
 <div class="card">
   <app-habilidades-item
+    (editarHabilidad)="abrirModalHijoEditar($event)"
+    (eliminarHabilidad)="eliminarHabilidad($event)"
     [habilidad]="i"
     *ngFor="let i of habilidades"
   ></app-habilidades-item>
 </div>
+<app-habilidad-form
+  (submitFormHabilidad)="nuevoSubmit($event)"
+  #habilidadForm
+></app-habilidad-form>

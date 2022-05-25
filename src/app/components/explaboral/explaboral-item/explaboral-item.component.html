@@ -3,3 +3,25 @@
   <h3>Periodo: {{ explaboral.periodo }}</h3>
   <p>Descripcion: {{ explaboral.descripcion }}</p>
 </div>
+<span class="p-buttonset">
+  <button
+    (click)="editarExp()"
+    pButton
+    pRipple
+    type="button"
+    icon="pi pi-pencil"
+    class="p-button-rounded p-button-success"
+  >
+    Editar
+  </button>
+  <button
+    (click)="eliminarExp()"
+    pButton
+    pRipple
+    type="button"
+    icon="pi pi-trash"
+    class="button-personal p-button-rounded"
+  >
+    Borrar
+  </button>
+</span>

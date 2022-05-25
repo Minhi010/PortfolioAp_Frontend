@@ -35,6 +35,9 @@ import { CalendarModule } from 'primeng/calendar';
 import { CursoFormComponent } from './components/curso/curso-form/curso-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { EduformalFormComponent } from './components/eduformal/eduformal-form/eduformal-form.component';
+import { ExplaboralFormComponent } from './components/explaboral/explaboral-form/explaboral-form.component';
+import { HabilidadFormComponent } from './components/habilidad/habilidad-form/habilidad-form.component';
+import { ProyectoFormComponent } from './components/proyecto/proyecto-form/proyecto-form.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { EduformalFormComponent } from './components/eduformal/eduformal-form/ed
     CursoFormComponent,
     LoginComponent,
     EduformalFormComponent,
+    ExplaboralFormComponent,
+    HabilidadFormComponent,
+    ProyectoFormComponent,
   ],
   imports: [
     BrowserModule,

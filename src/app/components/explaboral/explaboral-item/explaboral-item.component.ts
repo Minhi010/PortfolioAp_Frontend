@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, EventEmitter, OnInit, Output } from '@angular/core';
 import { ExpLaboral } from 'src/app/models/ExpLaboral';
 
 @Component({
@@ -8,7 +8,15 @@ import { ExpLaboral } from 'src/app/models/ExpLaboral';
 })
 export class ExplaboralItemComponent implements OnInit {
   @Input() explaboral!: ExpLaboral;
+  @Output() editarExplaboral: EventEmitter<ExpLaboral> = new EventEmitter();
+  @Output() eliminarExplaboral: EventEmitter<ExpLaboral> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
+  editarExp() {
+    this.editarExplaboral.emit(this.explaboral);
+  }
+  eliminarExp() {
+    this.eliminarExplaboral.emit(this.explaboral);
+  }
 }

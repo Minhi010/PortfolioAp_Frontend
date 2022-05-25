@@ -1,50 +1,49 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EduFormal } from 'src/app/models/EduFormal';
+import { Proyecto } from 'src/app/models/Proyecto';
 
 @Component({
-  selector: 'app-eduformal-form',
-  templateUrl: './eduformal-form.component.html',
-  styleUrls: ['./eduformal-form.component.css'],
+  selector: 'app-proyecto-form',
+  templateUrl: './proyecto-form.component.html',
+  styleUrls: ['./proyecto-form.component.css'],
 })
-export class EduformalFormComponent implements OnInit {
+export class ProyectoFormComponent implements OnInit {
+  mostrarFormulario: boolean = false;
   formulario: FormGroup;
-  mostrarForm: boolean = false;
-  @Output() submitEduFormal: EventEmitter<EduFormal> = new EventEmitter();
+  @Output() submitProyecto: EventEmitter<Proyecto> = new EventEmitter();
   constructor(private formBuilder: FormBuilder) {
     this.formulario = this.formBuilder.group({
       id: [0],
-      titulo: [
+      nombre: [
         '',
         [
           Validators.required,
-          Validators.minLength(3),
           Validators.maxLength(50),
+          Validators.minLength(3),
         ],
       ],
-      institucion: [
+      enlace: [
         '',
         [
           Validators.required,
-          Validators.minLength(3),
           Validators.maxLength(50),
+          Validators.minLength(3),
         ],
       ],
-      foto: ['', [Validators.required]],
-      periodo: [
+      fecha: [
         '',
         [
           Validators.required,
-          Validators.minLength(3),
           Validators.maxLength(50),
+          Validators.minLength(3),
         ],
       ],
       descripcion: [
         '',
         [
           Validators.required,
-          Validators.minLength(3),
           Validators.maxLength(50),
+          Validators.minLength(3),
         ],
       ],
     });
@@ -52,21 +51,21 @@ export class EduformalFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  mostrarFormEdu() {
-    this.mostrarForm = true;
-    this.formulario.reset();
-  }
-  setFormEdu(eduformal: EduFormal) {
-    this.mostrarFormEdu();
-    this.formulario.patchValue(eduformal);
-  }
-  submitFormEdu() {
+  submitProyectoForm() {
     if (this.formulario.valid) {
-      this.submitEduFormal.emit(this.formulario.value);
+      this.submitProyecto.emit(this.formulario.value);
+      this.mostrarFormulario = false;
       this.formulario.reset();
-      this.mostrarForm = false;
     } else {
       this.formulario.markAllAsTouched();
     }
+  }
+  abrirFormulario() {
+    this.mostrarFormulario = true;
+    this.formulario.reset();
+  }
+  setProyecto(proyecto: Proyecto) {
+    this.abrirFormulario();
+    this.formulario.patchValue(proyecto);
   }
 }

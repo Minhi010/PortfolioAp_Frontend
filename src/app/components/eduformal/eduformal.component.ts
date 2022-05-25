@@ -21,10 +21,10 @@ export class EduformalComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {}
   abrirModalHijo() {
     this.eduFormalForm.mostrarFormEdu();
   }
-  ngOnInit(): void {}
   abrirModalHijoEditar(eduFormal: EduFormal) {
     this.eduFormalForm.setFormEdu(eduFormal);
   }

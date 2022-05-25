@@ -1,46 +1,31 @@
 <p-dialog
-  [(visible)]="mostrarForm"
+  [(visible)]="mostrarFormulario"
   [style]="{ width: '50vw' }"
   position="right"
   [modal]="true"
   [draggable]="false"
 >
-  <form [formGroup]="formulario" (ngSubmit)="submitFormEdu()" class="form">
+  <form [formGroup]="formulario" (ngSubmit)="submitProyectoForm()" class="form">
     <div class="p-fluid grid">
       <div class="field col-3 md:col-4">
         <span class="p-float-label">
-          <input type="text" id="titulo" pInputText formControlName="titulo" />
-          <label for="nombre">Titulo</label>
+          <input type="text" id="nombre" pInputText formControlName="nombre" />
+          <label for="nombre">Nombre</label>
         </span>
       </div>
       <div class="field col-12 md:col-4">
         <span class="p-float-label">
-          <input
-            type="text"
-            id="institucion"
-            pInputText
-            formControlName="institucion"
-          />
-          <label for="institucion">Institucion</label>
+          <input type="text" id="enlace" pInputText formControlName="enlace" />
+          <label for="enlace">Enlace</label>
         </span>
       </div>
       <div class="field col-12 md:col-4">
         <span class="p-float-label">
-          <input type="text" id="foto" pInputText formControlName="foto" />
-          <label for="foto">Foto</label>
+          <input type="text" id="fecha" pInputText formControlName="fecha" />
+          <label for="fecha">Fecha</label>
         </span>
       </div>
-      <div class="field col-12 md:col-4">
-        <span class="p-float-label">
-          <input
-            type="text"
-            id="periodo"
-            pInputText
-            formControlName="periodo"
-          />
-          <label for="periodo">Periodo</label>
-        </span>
-      </div>
+
       <div class="field col-12 md:col-4">
         <span class="p-float-label">
           <textarea
