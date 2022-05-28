@@ -18,7 +18,8 @@ body {
   background: var(--color-fondo);
 }
 :root {
-  --color-oscuro: #524a4e;
+  --color-oscuro: #323232;
+  --color-oscuro2: #524a4e;
   --color-claro: #fdeff4;
   --color-rosaC: #ffc0d3;
   --color-rosa: #ff5c8d;
@@ -35,6 +36,7 @@ body {
   box-shadow: 0 0.25rem 0.5rem hsl(284, 13%, 55%);
   line-height: 2rem;
 }
+
 .card-head {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #edf1f2;
@@ -50,9 +52,9 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-  background-color: #fff;
+
   margin: 1.25rem 0 1.25rem 0;
-  box-shadow: 0 0.25rem 0.5rem hsl(284, 13%, 55%);
+
   line-height: 2rem;
   width: 85%;
   margin: 0 auto;
@@ -63,15 +65,32 @@ body {
   color: #524a4e;
 }
 /*----------------------- imagenes------------------------------*/
-.circular-reveal {
-  width: 256px;
-  height: 256px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto;
+
+.img-wrapper {
+  max-width: 200px;
+
+  position: relative;
 }
-.circular-reveal img {
+.img-wrapper img {
   width: 100%;
+  display: block;
+  border-radius: 50%;
+}
+.img-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border: 6px solid var(--color-fondo);
+  border-top-color: var(--color-rosa);
+  border-bottom-color: var(--color-oscuro);
+  border-radius: 50%;
+  z-index: -1;
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*------------------------------botones----------------------------------*/
@@ -79,11 +98,11 @@ body {
   font-family: "Plus Jakarta Sans";
   font-size: 16px;
   font-weight: 500;
-  background: var(--color-rosaC); /* color de fondo */
-  color: var(--color-oscuro); /* color de fuente */
-  border: 1px solid #fdeff4; /* tamaño y color de borde */
-  padding: 9px 11px;
-  border-radius: 3px; /* redondear bordes */
+  background: var(--color-rosaC);
+  color: var(--color-oscuro);
+  border: 1px solid #fdeff4;
+  padding: 0.5em 0;
+  border-radius: 5px;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -91,11 +110,11 @@ body {
   width: 5rem;
 }
 .ov-btn-slide-right:hover {
-  color: var(--color-oscuro); /* color de fuente hover */
+  color: var(--color-oscuro);
 }
 .ov-btn-slide-right::after {
   content: "";
-  background: var(--color-rosa); /* color de fondo hover */
+  background: var(--color-rosa);
   position: absolute;
   z-index: -1;
   padding: 16px 20px;
@@ -114,4 +133,90 @@ body {
   bottom: 0;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
+}
+
+/*---------------------utilidades--------------------------*/
+.form > * > * {
+  margin: 1.5em 0;
+}
+
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0;
+}
+.alineado {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-buttonset {
+  display: flex;
+  justify-content: end;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background: rgba(151, 134, 149, 0.308);
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 5em 0 0;
+}
+.box img {
+  width: 100%;
+  height: auto;
+}
+.box2 {
+  width: 200px;
+  height: 200px;
+  background: rgba(151, 134, 149, 0.308);
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 5em 0 0;
+}
+.box2 img {
+  width: 100%;
+  height: auto;
+}
+
+@supports (object-fit: cover) {
+  .box img,
+  .box2 img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+/*------------------------como muestro la info gral---------------------------*/
+.secciones {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em 2em 0.5em 3em;
+  padding-top: 1em 2em;
+}
+
+.textos {
+  margin: 2em 0;
+  line-height: 2em;
+}
+.botones {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid var(--color-rosa);
+}
+
+/*---------------------------malevolos medias queries---------------------*/
+@media (max-width: 500px) {
+  .secciones {
+    flex-direction: column;
+    margin: 1em 0;
+  }
 }

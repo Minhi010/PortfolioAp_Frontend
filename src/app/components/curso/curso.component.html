@@ -1,5 +1,12 @@
-<h1>Cursos</h1>
-<div class="card">
+<div class="alineado">
+  <h1>Cursos</h1>
+  <button class="ov-btn-slide-right" (click)="abrirModalHijo()" label="Show">
+    <i class="pi pi-plus"></i>
+    Añadir
+  </button>
+</div>
+
+<div class="centrado">
   <app-curso-item
     (editarCurso)="abrirModalHijoEditar($event)"
     (eliminarCursoEvent)="eliminarCursoLista($event)"
@@ -11,11 +18,3 @@
   (submitFormCurso)="nuevoSubmit($event)"
   #cursoForm
 ></app-curso-form>
-<button
-  class="ov-btn-slide-right"
-  (click)="abrirModalHijo()"
-  icon="pi pi-plus"
-  label="Show"
->
-  Añadir
-</button>

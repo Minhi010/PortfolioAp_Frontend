@@ -1,13 +1,12 @@
-<h1>Educación Formal</h1>
-<button
-  class="ov-btn-slide-right"
-  (click)="abrirModalHijo()"
-  icon="pi pi-external-link"
-  label="Show"
->
-  Añadir
-</button>
-<div class="card">
+<div class="alineado">
+  <h1>Educación Formal</h1>
+  <button class="ov-btn-slide-right" (click)="abrirModalHijo()" label="Show">
+    <i class="pi pi-plus"></i>
+    Añadir
+  </button>
+</div>
+
+<div class="centrado">
   <app-eduformal-item
     (editarEduFormal)="abrirModalHijoEditar($event)"
     (eliminarEduFormal)="eliminarEduFormal($event)"

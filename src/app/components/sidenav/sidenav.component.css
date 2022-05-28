@@ -96,3 +96,8 @@
 .sidenav-link-text:hover {
   color: var(--color-oscuro);
 }
+.logoap {
+  width: 3.5em;
+  height: 3em;
+  cursor: pointer;
+}

@@ -1,28 +1,30 @@
-<div class="card-body">
-  <h2>Nombre: {{ proyecto.nombre }}</h2>
-  <h3>Descripcion: {{ proyecto.descripcion }}</h3>
-  <p>Fecha: {{ proyecto.fecha }}</p>
-  <a href="{{ proyecto.enlace }}" class="link">Enlace a proyecto.</a>
+<div class="secciones">
+  <div class="textos">
+    <h2>Nombre: {{ proyecto.nombre }}</h2>
+    <h3>Descripcion: {{ proyecto.descripcion }}</h3>
+    <p>Fecha: {{ proyecto.fecha }}</p>
+    <a href="{{ proyecto.enlace }}" target="_blank" class="link"
+      >Enlace a proyecto.</a
+    >
+  </div>
 </div>
-<span class="p-buttonset">
-  <button
-    (click)="editarProyectoForm()"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-pencil"
-    class="p-button-rounded p-button-success"
-  >
-    Editar
-  </button>
-  <button
-    (click)="eliminarProyectoForm()"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-trash"
-    class="button-personal p-button-rounded"
-  >
-    Borrar
-  </button>
-</span>
+<div class="botones">
+  <span class="p-buttonset">
+    <button
+      (click)="editarProyectoForm()"
+      type="button"
+      class="ov-btn-slide-right"
+    >
+      <i class="pi pi-pencil"></i>
+      Editar
+    </button>
+    <button
+      (click)="eliminarProyectoForm()"
+      type="button"
+      class="ov-btn-slide-right"
+    >
+      <i class="pi pi-trash"></i>
+      Borrar
+    </button>
+  </span>
+</div>

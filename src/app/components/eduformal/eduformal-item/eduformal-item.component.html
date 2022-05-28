@@ -1,28 +1,23 @@
-<div class="card-body">
-  <h2>Titulo: {{ eduFormal.titulo }}</h2>
-  <h3>Institución: {{ eduFormal.institucion }}</h3>
-  <p>Periodo: {{ eduFormal.periodo }}</p>
-  <p>Descripcion: {{ eduFormal.descripcion }}</p>
+<div class="secciones">
+  <div class="box">
+    <img [src]="eduFormal.foto" alt="" />
+  </div>
+  <div class="textos">
+    <h2>Titulo: {{ eduFormal.titulo }}</h2>
+    <h3>Institución: {{ eduFormal.institucion }}</h3>
+    <p>Periodo: {{ eduFormal.periodo }}</p>
+    <p>Descripcion: {{ eduFormal.descripcion }}</p>
+  </div>
 </div>
-<span class="p-buttonset">
-  <button
-    (click)="editarEdu()"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-pencil"
-    class="p-button-rounded p-button-success"
-  >
-    Editar
-  </button>
-  <button
-    (click)="eliminarEdu()"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-trash"
-    class="button-personal p-button-rounded"
-  >
-    Borrar
-  </button>
-</span>
+<div class="botones">
+  <span class="p-buttonset">
+    <button (click)="editarEdu()" type="button" class="ov-btn-slide-right">
+      <i class="pi pi-pencil"></i>
+      Editar
+    </button>
+    <button (click)="eliminarEdu()" type="button" class="ov-btn-slide-right">
+      <i class="pi pi-trash"></i>
+      Borrar
+    </button>
+  </span>
+</div>

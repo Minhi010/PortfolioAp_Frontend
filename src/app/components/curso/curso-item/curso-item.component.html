@@ -1,34 +1,27 @@
-<div class="card-body">
-  <div class="circular-reveal">
-    <div class="circular-reveal__content">
-      <img [src]="curso.foto" alt="" />
-    </div>
+<div class="secciones">
+  <div class="box">
+    <img [src]="curso.foto" alt="" />
   </div>
 
-  <h3>Titulo: {{ curso.nombre }}</h3>
-  <h3>Institucion: {{ curso.institucion }}</h3>
-  <h3>Duracion: {{ curso.duracion }}</h3>
-  <p>Descripción: {{ curso.descripcion }}</p>
+  <div class="textos">
+    <h2>Titulo: {{ curso.nombre }}</h2>
+    <h3>Institucion: {{ curso.institucion }}</h3>
+    <h3>Duracion: {{ curso.duracion }}</h3>
+    <p>Descripción: {{ curso.descripcion }}</p>
+  </div>
 </div>
-<span class="p-buttonset">
-  <button
-    (click)="editarCursoForm()"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-pencil"
-    class="p-button-rounded p-button-success"
-  >
-    Editar
-  </button>
-  <button
-    (click)="eliminarCurso()"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-trash"
-    class="button-personal p-button-rounded"
-  >
-    Borrar
-  </button>
-</span>
+<div class="botones">
+  <span class="p-buttonset">
+    <button
+      (click)="editarCursoForm()"
+      type="button"
+      class="ov-btn-slide-right"
+    >
+      <i class="pi pi-pencil"></i> Editar
+    </button>
+    <button (click)="eliminarCurso()" type="button" class="ov-btn-slide-right">
+      <i class="pi pi-trash"></i>
+      Borrar
+    </button>
+  </span>
+</div>

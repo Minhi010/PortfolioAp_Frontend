@@ -5,6 +5,9 @@
   [modal]="true"
   [draggable]="false"
 >
+  <ng-template pTemplate="header" class="header-modal">
+    <h2>Proyecto</h2>
+  </ng-template>
   <form [formGroup]="formulario" (ngSubmit)="submitProyectoForm()" class="form">
     <div class="p-fluid grid">
       <div class="field col-3 md:col-4">
@@ -41,6 +44,6 @@
       </div>
     </div>
 
-    <button type="submit">Guardar</button>
+    <button class="ov-btn-slide-right" type="submit">Guardar</button>
   </form>
 </p-dialog>

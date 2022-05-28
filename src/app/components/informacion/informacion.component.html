@@ -1,33 +1,37 @@
 <h1>Mi Perfil</h1>
-<div class="card-info">
-  <div class="circular-reveal">
-    <div class="circular-reveal__content">
-      <img [src]="informacion?.foto" alt="foto de perfil" />
+<div class="alineado">
+  <div class="secciones">
+    <div class="img-wrapper">
+      <div class="box2">
+        <img [src]="informacion?.foto" alt="foto de perfil" />
+      </div>
+    </div>
+    <!-- <div class="circle-1"></div>
+  <div class="circle-2"></div> -->
+
+    <div class="textos">
+      <h2>
+        Nombre y apellido: {{ informacion.nombre }} {{ informacion.apellido }}
+      </h2>
+      <h3>
+        Fecha de nacimiento:
+        {{ informacion?.fechaNacimiento | date: "dd/MM/yyyy" }}
+      </h3>
+      <h3>Nacionalidad: {{ informacion.nacionalidad }}</h3>
+      <h3>E-mail: {{ informacion.mail }}</h3>
+      <h3>Ocupación: {{ informacion.ocupacion }}</h3>
+      <p>Sobre mi: {{ informacion.descripcion }}</p>
     </div>
   </div>
-  <div class="card-body">
-    <h2>
-      Nombre y apellido: {{ informacion.nombre }} {{ informacion.apellido }}
-    </h2>
-    <h4>
-      Fecha de nacimiento:
-      {{ informacion?.fechaNacimiento | date: "dd/MM/yyyy" }}
-    </h4>
-    <h4>Nacionalidad: {{ informacion.nacionalidad }}</h4>
-    <h4>E-mail: {{ informacion.mail }}</h4>
-    <h4>Ocupación: {{ informacion.ocupacion }}</h4>
-    <p>Sobre mi: {{ informacion.descripcion }}</p>
-  </div>
-  <button
-    class="ov-btn-slide-right"
-    (click)="abrirModalHijo()"
-    icon="pi pi-external-link"
-    label="Show"
-  >
-    Editar
-  </button>
 </div>
-
+<div class="botones">
+  <span class="p-buttonset">
+    <button class="ov-btn-slide-right" (click)="abrirModalHijo()" label="Show">
+      <i class="pi pi-pencil"></i>
+      Editar
+    </button></span
+  >
+</div>
 <app-informacion-form
   #informacionForm
   (editForm)="editInfo($event)"

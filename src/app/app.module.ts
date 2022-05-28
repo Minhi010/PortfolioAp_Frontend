@@ -40,6 +40,7 @@ import { HabilidadFormComponent } from './components/habilidad/habilidad-form/ha
 import { ProyectoFormComponent } from './components/proyecto/proyecto-form/proyecto-form.component';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { MessageService } from 'primeng/api';
     InputTextModule,
     CalendarModule,
     ToastModule,
+    PasswordModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

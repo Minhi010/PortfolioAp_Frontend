@@ -1,6 +1,12 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
   <div class="logo-container">
-    <button class="logo" (click)="toggleCollapse()">P</button>
+    <img
+      src="../../../assets/APLogo-20-201.png"
+      class="logoap"
+      alt=""
+      (click)="toggleCollapse()"
+    />
+
     <div class="logo-text" @fadeInOut *ngIf="collapsed">Portfolio</div>
     <button
       class="btn-close"

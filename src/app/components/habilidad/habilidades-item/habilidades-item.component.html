@@ -1,27 +1,27 @@
-<div class="card-body">
-  <h2>Habilidad: {{ habilidad.tecnologia }}</h2>
-  <h3>Nivel: {{ habilidad.nivel }}</h3>
-  <p>Descripcion: {{ habilidad.descripcion }}</p>
+<div class="secciones">
+  <div class="textos">
+    <h2>Habilidad: {{ habilidad.tecnologia }}</h2>
+    <h3>Nivel: {{ habilidad.nivel }}</h3>
+    <p>Descripcion: {{ habilidad.descripcion }}</p>
+  </div>
 </div>
-<span class="p-buttonset">
-  <button
-    (click)="editarHabilidadForm()"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-pencil"
-    class="p-button-rounded p-button-success"
-  >
-    Editar
-  </button>
-  <button
-    (click)="eliminarHabilidadForm()"
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-trash"
-    class="button-personal p-button-rounded"
-  >
-    Borrar
-  </button>
-</span>
+<div class="botones">
+  <span class="p-buttonset">
+    <button
+      (click)="editarHabilidadForm()"
+      type="button"
+      class="ov-btn-slide-right"
+    >
+      <i class="pi pi-pencil"></i>
+      Editar
+    </button>
+    <button
+      (click)="eliminarHabilidadForm()"
+      type="button"
+      class="ov-btn-slide-right"
+    >
+      <i class="pi pi-trash"></i>
+      Borrar
+    </button>
+  </span>
+</div>
