@@ -7,15 +7,13 @@
   box-sizing: border-box;
 }
 body {
-  position: relative;
+  margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
-
-  width: calc(100%-5rem);
-  height: 100%vh;
-  z-index: 0;
-  top: 0;
+  display: grid;
+  flex-wrap: wrap;
   transition: all 0.5s ease;
   background: var(--color-fondo);
+  min-height: 100vh;
 }
 :root {
   --color-oscuro: #323232;
@@ -220,12 +218,20 @@ body {
     margin: 1em 0;
   }
 }
+/*----------------------------------pie de pagina rebelde----------------------------------*/
 
 footer {
   color: #ff5c8d;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
   background-color: #323232;
-  margin: 0 auto;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.redes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

@@ -1,7 +1,8 @@
 .body {
   margin-left: 5rem;
-  padding: 3rem;
+  padding: 2rem 2rem 0 2rem;
   transition: all 0.5s ease;
+  min-height: 100vh;
 }
 .body-trimmed {
   width: calc(100% - 16.5625rem);
@@ -10,4 +11,13 @@
 .body-md-screen {
   width: calc(100% - 5rem);
   margin-left: 5rem;
+}
+.redes {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+.redes i {
+  font-size: 1em;
+  margin-right: 10px;
 }
