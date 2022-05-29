@@ -3,4 +3,5 @@ export interface Habilidad {
   tecnologia: string;
   nivel: number;
   descripcion: string;
+  foto: String;
 }
