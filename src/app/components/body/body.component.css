@@ -1,6 +1,6 @@
 .body {
   margin-left: 5rem;
-  padding: 2rem 2rem 0 2rem;
+  padding: 0.5rem 2rem 0 2rem;
   transition: all 0.5s ease;
   min-height: 100vh;
 }
@@ -14,10 +14,19 @@
 }
 .redes {
   display: flex;
-  margin-top: 10px;
+  padding: 5px;
   justify-content: center;
 }
 .redes i {
-  font-size: 1em;
-  margin-right: 10px;
+  color: var(--color-rosa);
+}
+.redes p {
+  padding: 0 10px;
+}
+.sidenav-link-icon2 {
+  font-size: 22px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 0.5rem;
+  text-align: center;
 }
