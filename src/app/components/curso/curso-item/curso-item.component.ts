@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Curso } from 'src/app/models/Curso';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-curso-item',
@@ -10,7 +11,7 @@ export class CursoItemComponent implements OnInit {
   @Input() curso!: Curso;
   @Output() editarCurso: EventEmitter<Curso> = new EventEmitter();
   @Output() eliminarCursoEvent: EventEmitter<Curso> = new EventEmitter();
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
   editarCursoForm() {
@@ -18,5 +19,8 @@ export class CursoItemComponent implements OnInit {
   }
   eliminarCurso() {
     this.eliminarCursoEvent.emit(this.curso);
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

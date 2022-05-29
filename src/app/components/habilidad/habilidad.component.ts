@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Habilidad } from 'src/app/models/Habilidad';
+import { AuthService } from 'src/app/services/auth.service';
 import { HabilidadService } from 'src/app/services/Habilidad.service';
 import { PersonaService } from 'src/app/services/Persona.service';
 import { HabilidadFormComponent } from './habilidad-form/habilidad-form.component';
@@ -16,7 +17,8 @@ export class HabilidadComponent implements OnInit {
   constructor(
     private personaService: PersonaService,
     private habilidadService: HabilidadService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private authService: AuthService
   ) {
     this.personaService.getMiPersona().subscribe((persona) => {
       this.habilidades = persona.habilidades;
@@ -94,5 +96,8 @@ export class HabilidadComponent implements OnInit {
         });
       },
     });
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

@@ -8,6 +8,7 @@
 <div class="botones">
   <span class="p-buttonset">
     <button
+      *ngIf="logueado()"
       (click)="editarExp()"
       type="button"
       icon="pi pi-pencil"
@@ -16,7 +17,12 @@
       <i class="pi pi-pencil"></i>
       Editar
     </button>
-    <button (click)="eliminarExp()" type="button" class="ov-btn-slide-right">
+    <button
+      *ngIf="logueado()"
+      (click)="eliminarExp()"
+      type="button"
+      class="ov-btn-slide-right"
+    >
       <i class="pi pi-trash"></i>Borrar
     </button>
   </span>

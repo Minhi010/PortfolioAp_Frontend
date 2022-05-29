@@ -4,6 +4,7 @@ import { ExpLaboral } from '../../models/ExpLaboral';
 import { ExpLaboralService } from 'src/app/services/ExpLaboral.service';
 import { ExplaboralFormComponent } from './explaboral-form/explaboral-form.component';
 import { MessageService } from 'primeng/api';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-explaboral',
   templateUrl: './explaboral.component.html',
@@ -15,7 +16,8 @@ export class ExplaboralComponent implements OnInit {
   constructor(
     private personaService: PersonaService,
     private expLaboralService: ExpLaboralService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private authService: AuthService
   ) {
     this.personaService.getMiPersona().subscribe((persona) => {
       this.explaboral = persona.expLaboral;
@@ -92,5 +94,8 @@ export class ExplaboralComponent implements OnInit {
         });
       },
     });
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

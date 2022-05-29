@@ -1,6 +1,11 @@
 <div class="alineado">
   <h1>Cursos</h1>
-  <button class="ov-btn-slide-right" (click)="abrirModalHijo()" label="Show">
+  <button
+    *ngIf="logueado()"
+    class="ov-btn-slide-right"
+    (click)="abrirModalHijo()"
+    label="Show"
+  >
     <i class="pi pi-plus"></i>
     Añadir
   </button>

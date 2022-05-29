@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Informacion } from 'src/app/models/Informacion';
+import { AuthService } from 'src/app/services/auth.service';
 import { InformacionService } from 'src/app/services/Informacion.service';
 import { PersonaService } from 'src/app/services/Persona.service';
 import { InformacionFormComponent } from './informacion-form/informacion-form.component';
@@ -27,7 +28,8 @@ export class InformacionComponent implements OnInit {
   constructor(
     private personaService: PersonaService,
     private informacionService: InformacionService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -56,5 +58,8 @@ export class InformacionComponent implements OnInit {
         });
       },
     });
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

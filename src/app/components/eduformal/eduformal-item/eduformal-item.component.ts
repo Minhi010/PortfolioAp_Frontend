@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EduFormal } from 'src/app/models/EduFormal';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-eduformal-item',
@@ -11,7 +12,7 @@ export class EduformalItemComponent implements OnInit {
   @Output() editarEduFormal: EventEmitter<EduFormal> = new EventEmitter();
   @Output() eliminarEduFormal: EventEmitter<EduFormal> = new EventEmitter();
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
   editarEdu() {
@@ -19,5 +20,8 @@ export class EduformalItemComponent implements OnInit {
   }
   eliminarEdu() {
     this.eliminarEduFormal.emit(this.eduFormal);
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

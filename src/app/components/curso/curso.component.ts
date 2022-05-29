@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Curso } from 'src/app/models/Curso';
+import { AuthService } from 'src/app/services/auth.service';
 import { CursoService } from 'src/app/services/Curso.service';
 import { PersonaService } from 'src/app/services/Persona.service';
 import { CursoFormComponent } from './curso-form/curso-form.component';
@@ -16,7 +17,8 @@ export class CursoComponent implements OnInit {
   constructor(
     private personaService: PersonaService,
     private cursoService: CursoService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private authService: AuthService
   ) {
     this.personaService.getMiPersona().subscribe((persona) => {
       this.cursos = persona.cursos;
@@ -94,5 +96,8 @@ export class CursoComponent implements OnInit {
         });
       },
     });
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

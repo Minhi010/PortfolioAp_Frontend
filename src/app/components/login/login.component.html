@@ -2,14 +2,24 @@
 
 <div class="container">
   <h2 class="log">Ingrese sus datos para iniciar sesión</h2>
-  <form>
-    <input type="text" class="email" placeholder="email" />
+  <form [formGroup]="form" (ngSubmit)="Submit()">
+    <input
+      type="text"
+      class="nombre"
+      placeholder="nombre"
+      formControlName="usuario"
+    />
     <br />
-    <input type="password" class="pwd" placeholder="password" />
+    <input
+      type="password"
+      class="pwd"
+      placeholder="password"
+      formControlName="contraseña"
+    />
+    <div class="botones2">
+      <button class="ov-btn-slide-right" type="submit">
+        <span>Acceder</span>
+      </button>
+    </div>
   </form>
-  <div class="botones2">
-    <button class="ov-btn-slide-right">
-      <span>Acceder</span>
-    </button>
-  </div>
 </div>

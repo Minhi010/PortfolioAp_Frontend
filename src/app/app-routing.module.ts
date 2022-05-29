@@ -8,6 +8,7 @@ import { HabilidadComponent } from './components/habilidad/habilidad.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'habilidades', component: HabilidadComponent },
   { path: 'proyectos', component: ProyectoComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
 ];
 
 @NgModule({

@@ -32,5 +32,35 @@
         }}</span>
       </a>
     </li>
+    <ng-container *ngIf="!logueado(); else logout">
+      <li class="sidenav-nav-item">
+        <a
+          class="sidenav-nav-link"
+          [routerLink]="['/login']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="sidenav-link-icon" [class]="'pi pi-sign-in'"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed"
+            >Login</span
+          >
+        </a>
+      </li>
+    </ng-container>
+    <ng-template #logout>
+      <li class="sidenav-nav-item">
+        <a
+          class="sidenav-nav-link"
+          [routerLink]="['/logout']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="sidenav-link-icon" [class]="'pi pi-sign-out'"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed"
+            >Logout</span
+          >
+        </a>
+      </li>
+    </ng-template>
   </ul>
 </div>

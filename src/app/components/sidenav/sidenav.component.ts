@@ -13,6 +13,7 @@ import {
   HostListener,
 } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 import { PersonaService } from 'src/app/services/Persona.service';
 import { navbarData } from './nav-data';
 import { SideNavToggle } from './SideNavToggle.model';
@@ -46,14 +47,17 @@ import { SideNavToggle } from './SideNavToggle.model';
   ],
 })
 export class SidenavComponent implements OnInit {
-  constructor(private personaService: PersonaService) {}
+  constructor(
+    private personaService: PersonaService,
+    private authService: AuthService
+  ) {}
   @Output() onToggleSidenav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
 
-  cargue(): boolean {
-    return this.personaService.termineCarga;
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -85,11 +89,5 @@ export class SidenavComponent implements OnInit {
       collapsed: this.collapsed,
       screenWidth: this.screenWidth,
     });
-  }
-  abrirLink(event: Event): void {
-    if (!this.cargue()) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
   }
 }

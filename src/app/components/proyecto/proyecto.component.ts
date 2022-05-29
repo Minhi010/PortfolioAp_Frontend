@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Proyecto } from 'src/app/models/Proyecto';
+import { AuthService } from 'src/app/services/auth.service';
 import { PersonaService } from 'src/app/services/Persona.service';
-import { ProyectoService } from 'src/app/services/proyecto.service';
+import { ProyectoService } from '../../services/Proyecto.service';
 import { ProyectoFormComponent } from './proyecto-form/proyecto-form.component';
 
 @Component({
@@ -16,7 +17,8 @@ export class ProyectoComponent implements OnInit {
   constructor(
     private personaService: PersonaService,
     private proyectoService: ProyectoService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private authService: AuthService
   ) {
     this.personaService.getMiPersona().subscribe((persona) => {
       this.proyectos = persona.proyectos;
@@ -89,5 +91,8 @@ export class ProyectoComponent implements OnInit {
         });
       },
     });
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

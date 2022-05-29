@@ -60,7 +60,7 @@ input::placeholder {
   transform: translateY(-20px);
 }
 
-.email,
+.nombre,
 .pwd {
   position: relative;
   z-index: 1;

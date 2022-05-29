@@ -34,9 +34,4 @@ export const navbarData = [
     icon: 'pi pi-folder',
     label: 'Proyectos',
   },
-  {
-    routeLink: 'login',
-    icon: 'pi pi-user',
-    label: 'Login',
-  },
 ];

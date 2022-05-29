@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Proyecto } from 'src/app/models/Proyecto';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-proyectos-item',
@@ -11,7 +12,7 @@ export class ProyectosItemComponent implements OnInit {
   @Output() editarProyecto: EventEmitter<Proyecto> = new EventEmitter();
   @Output() eliminarProyecto: EventEmitter<Proyecto> = new EventEmitter();
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
   editarProyectoForm() {
@@ -19,5 +20,8 @@ export class ProyectosItemComponent implements OnInit {
   }
   eliminarProyectoForm() {
     this.eliminarProyecto.emit(this.proyecto);
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

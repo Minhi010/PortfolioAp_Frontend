@@ -4,6 +4,7 @@ import { EduFormalService } from 'src/app/services/EduFormal.service';
 import { PersonaService } from 'src/app/services/Persona.service';
 import { EduformalFormComponent } from './eduformal-form/eduformal-form.component';
 import { MessageService } from 'primeng/api';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-eduformal',
   templateUrl: './eduformal.component.html',
@@ -15,7 +16,8 @@ export class EduformalComponent implements OnInit {
   constructor(
     private personaService: PersonaService,
     private eduFormalService: EduFormalService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private authService: AuthService
   ) {
     this.personaService.getMiPersona().subscribe((persona) => {
       this.eduFormal = persona.eduFormal;
@@ -95,5 +97,8 @@ export class EduformalComponent implements OnInit {
         });
       },
     });
+  }
+  logueado(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

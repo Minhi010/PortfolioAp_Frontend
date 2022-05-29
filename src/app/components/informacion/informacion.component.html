@@ -24,7 +24,12 @@
 </div>
 <div class="botones">
   <span class="p-buttonset">
-    <button class="ov-btn-slide-right" (click)="abrirModalHijo()" label="Show">
+    <button
+      *ngIf="logueado()"
+      class="ov-btn-slide-right"
+      (click)="abrirModalHijo()"
+      label="Show"
+    >
       <i class="pi pi-pencil"></i>
       Editar
     </button></span

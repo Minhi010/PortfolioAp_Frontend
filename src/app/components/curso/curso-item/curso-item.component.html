@@ -13,13 +13,19 @@
 <div class="botones">
   <span class="p-buttonset">
     <button
+      *ngIf="logueado()"
       (click)="editarCursoForm()"
       type="button"
       class="ov-btn-slide-right"
     >
       <i class="pi pi-pencil"></i> Editar
     </button>
-    <button (click)="eliminarCurso()" type="button" class="ov-btn-slide-right">
+    <button
+      *ngIf="logueado()"
+      (click)="eliminarCurso()"
+      type="button"
+      class="ov-btn-slide-right"
+    >
       <i class="pi pi-trash"></i>
       Borrar
     </button>

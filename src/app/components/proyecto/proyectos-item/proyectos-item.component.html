@@ -11,6 +11,7 @@
 <div class="botones">
   <span class="p-buttonset">
     <button
+      *ngIf="logueado()"
       (click)="editarProyectoForm()"
       type="button"
       class="ov-btn-slide-right"
@@ -19,6 +20,7 @@
       Editar
     </button>
     <button
+      *ngIf="logueado()"
       (click)="eliminarProyectoForm()"
       type="button"
       class="ov-btn-slide-right"
