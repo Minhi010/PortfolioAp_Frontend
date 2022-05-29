@@ -2,7 +2,7 @@ export interface Informacion {
   id: number;
   nombre: string;
   apellido: string;
-  fechaNacimiento: Date;
+  fechaNacimiento: string;
   nacionalidad: string;
   ocupacion: string;
   mail: string;

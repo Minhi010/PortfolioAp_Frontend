@@ -41,6 +41,7 @@ import { ProyectoFormComponent } from './components/proyecto/proyecto-form/proye
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { PasswordModule } from 'primeng/password';
+import { FooterComponent } from './components/footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { PasswordModule } from 'primeng/password';
     ExplaboralFormComponent,
     HabilidadFormComponent,
     ProyectoFormComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

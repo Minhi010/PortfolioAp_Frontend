@@ -80,7 +80,7 @@ body {
   content: "";
   position: absolute;
   inset: -15px;
-  border: 6px solid var(--color-fondo);
+  border: 6px solid transparent;
   border-top-color: var(--color-rosa);
   border-bottom-color: var(--color-oscuro);
   border-radius: 50%;
@@ -219,4 +219,13 @@ body {
     flex-direction: column;
     margin: 1em 0;
   }
+}
+
+footer {
+  color: #ff5c8d;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: #323232;
+  margin: 0 auto;
 }

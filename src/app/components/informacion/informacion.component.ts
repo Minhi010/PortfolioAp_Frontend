@@ -15,7 +15,7 @@ export class InformacionComponent implements OnInit {
     id: 0,
     nombre: '',
     apellido: '',
-    fechaNacimiento: new Date(),
+    fechaNacimiento: '',
     nacionalidad: '',
     ocupacion: '',
     mail: '',

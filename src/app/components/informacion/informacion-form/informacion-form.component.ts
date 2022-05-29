@@ -22,11 +22,46 @@ export class InformacionFormComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      apellido: '',
-      fechaNacimiento: '',
-      nacionalidad: '',
-      ocupacion: '',
-      mail: '',
+      apellido: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(50),
+        ],
+      ],
+      fechaNacimiento: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(50),
+        ],
+      ],
+      nacionalidad: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(50),
+        ],
+      ],
+      ocupacion: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(50),
+        ],
+      ],
+      mail: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(50),
+        ],
+      ],
       descripcion: '',
       foto: '',
     });
