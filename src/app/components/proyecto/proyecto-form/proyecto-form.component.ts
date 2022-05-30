@@ -42,7 +42,7 @@ export class ProyectoFormComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.maxLength(50),
+          Validators.maxLength(240),
           Validators.minLength(3),
         ],
       ],
