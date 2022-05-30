@@ -8,7 +8,7 @@ const USERNAME_KEY = 'authUsername';
   providedIn: 'root',
 })
 export class AuthService {
-  url: string = 'http://localhost:8080/auth/';
+  url: string = 'https://fast-brook-86948.herokuapp.com/auth/';
   constructor(private httpClient: HttpClient) {}
 
   public login(loginDTO: LoginDTO): Observable<boolean> {

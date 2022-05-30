@@ -7,7 +7,7 @@ import { ExpLaboral } from '../models/ExpLaboral';
   providedIn: 'root',
 })
 export class ExpLaboralService {
-  url: string = 'http://localhost:8080/explaboral';
+  url: string = 'https://fast-brook-86948.herokuapp.com/explaboral';
   constructor(private http: HttpClient) {}
 
   getExpLaboral(): Observable<ExpLaboral> {

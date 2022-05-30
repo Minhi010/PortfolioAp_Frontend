@@ -7,7 +7,7 @@ import { Habilidad } from '../models/Habilidad';
   providedIn: 'root',
 })
 export class HabilidadService {
-  url: string = 'http://localhost:8080/habilidades';
+  url: string = 'https://fast-brook-86948.herokuapp.com/habilidades';
   constructor(private http: HttpClient) {}
 
   getHabilidad(): Observable<Habilidad> {

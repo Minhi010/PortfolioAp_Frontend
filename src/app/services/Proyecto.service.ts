@@ -7,7 +7,7 @@ import { Proyecto } from '../models/Proyecto';
   providedIn: 'root',
 })
 export class ProyectoService {
-  url: string = 'http://localhost:8080/proyectos';
+  url: string = 'https://fast-brook-86948.herokuapp.com/proyectos';
   constructor(private http: HttpClient) {}
 
   getProyecto(): Observable<Proyecto> {

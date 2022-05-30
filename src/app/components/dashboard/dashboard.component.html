@@ -7,7 +7,7 @@
           '¡Te doy la bienvenida a mi portfolio web!',
           '¡Me da mucho gusto que estés por aqui!',
           'Podés recorrer las secciones del menú lateral para navegar por mi sitio web.',
-          '¡Gracias por visitarme ! :) '
+          '¡Gracias por visitarme! :) '
         ]"
         [typeSpeed]="50"
       >
@@ -15,4 +15,21 @@
       </ngx-typed-js>
     </div>
   </div>
+  <ng-container *ngIf="cargando">
+    <div class="spinner-border text-primary container2" role="status">
+      <div class="container3">
+        <span
+          class="sr-only"
+          style="
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: rgb(148, 21, 137);
+            font-weight: 600;
+            font-size: 1.5rem;
+          "
+        >
+          Cargando datos, por favor espere (1 min aprox) :D</span
+        ><p-progressSpinner></p-progressSpinner>
+      </div>
+    </div>
+  </ng-container>
 </div>

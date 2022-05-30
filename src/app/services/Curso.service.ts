@@ -7,7 +7,7 @@ import { Curso } from '../models/Curso';
   providedIn: 'root',
 })
 export class CursoService {
-  url: string = 'http://localhost:8080/cursos';
+  url: string = 'https://fast-brook-86948.herokuapp.com/cursos';
   constructor(private http: HttpClient) {}
 
   getCurso(): Observable<Curso> {

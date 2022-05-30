@@ -7,7 +7,7 @@ import { EduFormal } from '../models/EduFormal';
   providedIn: 'root',
 })
 export class EduFormalService {
-  url: string = 'http://localhost:8080/eduformal';
+  url: string = 'https://fast-brook-86948.herokuapp.com/eduformal';
   constructor(private http: HttpClient) {}
   getEduformal(): Observable<EduFormal> {
     return this.http.get<EduFormal>(this.url + '/all');

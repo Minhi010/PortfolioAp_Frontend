@@ -7,7 +7,7 @@ import { Informacion } from '../models/Informacion';
   providedIn: 'root',
 })
 export class InformacionService {
-  url: string = 'http://localhost:8080/informacion';
+  url: string = 'https://fast-brook-86948.herokuapp.com/informacion';
   constructor(private http: HttpClient) {}
   getInformacion(): Observable<Informacion> {
     return this.http.get<Informacion>(this.url + '/all');
