@@ -38,6 +38,7 @@ export class HabilidadFormComponent implements OnInit {
           Validators.maxLength(240),
         ],
       ],
+      foto: ['', [Validators.required]],
     });
   }
 
