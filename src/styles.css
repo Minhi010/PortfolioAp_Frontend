@@ -218,6 +218,29 @@ body {
     flex-direction: column;
     margin: 1em 0;
   }
+  .contenedor3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5em 0;
+  }
+  .box2 .box {
+    width: 150px;
+    height: 150px;
+    background: rgba(151, 134, 149, 0.308);
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 2em 0 0;
+  }
+  .box2 img .box img {
+    width: 100%;
+    height: auto;
+  }
+  .img-wrapper {
+    max-width: 150px;
+    position: relative;
+  }
 }
 /*----------------------------------pie de pagina rebelde----------------------------------*/
 

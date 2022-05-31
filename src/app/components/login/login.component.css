@@ -89,3 +89,9 @@ input::placeholder {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 500px) {
+  .container {
+    width: 260px;
+    height: 370px;
+  }
+}

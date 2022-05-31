@@ -30,3 +30,8 @@
   margin: 0 0.5rem;
   text-align: center;
 }
+@media (max-width: 500px) {
+  .body {
+    margin-left: 3.5em;
+  }
+}

@@ -1,6 +1,12 @@
 .image:hover {
   cursor: pointer;
 }
-.textos {
+.textos2 {
   padding: 1em 5em;
+  line-height: 2em;
+}
+@media (max-width: 500px) {
+  .textos2 {
+    padding: 1em 0.5em;
+  }
 }
