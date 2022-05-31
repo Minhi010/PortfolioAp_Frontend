@@ -225,7 +225,7 @@ body {
     justify-content: center;
     margin: 0.5em 0;
   }
-  .box2 .box {
+  .box2 {
     width: 150px;
     height: 150px;
     background: rgba(151, 134, 149, 0.308);
@@ -233,7 +233,19 @@ body {
     border-radius: 50%;
     margin: 0 2em 0 0;
   }
-  .box2 img .box img {
+  .box {
+    width: 150px;
+    height: 150px;
+    background: rgba(151, 134, 149, 0.308);
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 2em 0 0;
+  }
+  .box img {
+    width: 100%;
+    height: auto;
+  }
+  .box2 img {
     width: 100%;
     height: auto;
   }
