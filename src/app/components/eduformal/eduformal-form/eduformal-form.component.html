@@ -6,14 +6,14 @@
   [draggable]="false"
 >
   <ng-template pTemplate="header" class="header-modal">
-    <h2>Educacion Formal</h2>
+    <h2>Educación Formal</h2>
   </ng-template>
   <form [formGroup]="formulario" (ngSubmit)="submitFormEdu()" class="form">
     <div class="p-fluid grid">
       <div class="field col-3 md:col-4">
         <span class="p-float-label">
           <input type="text" id="titulo" pInputText formControlName="titulo" />
-          <label for="nombre">Titulo</label>
+          <label for="nombre">Título</label>
         </span>
       </div>
       <div class="field col-12 md:col-4">
@@ -24,7 +24,7 @@
             pInputText
             formControlName="institucion"
           />
-          <label for="institucion">Institucion</label>
+          <label for="institucion">Institución</label>
         </span>
       </div>
       <div class="field col-12 md:col-4">
@@ -54,7 +54,7 @@
             pInputTextarea
             formControlName="descripcion"
           ></textarea>
-          <label for="descripcion">Descripcion</label>
+          <label for="descripcion">Descripción</label>
         </span>
       </div>
     </div>
